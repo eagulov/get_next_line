@@ -6,7 +6,7 @@
 /*   By: eagulov <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/26 18:44:41 by eagulov           #+#    #+#             */
-/*   Updated: 2019/01/06 15:24:40 by eagulov          ###   ########.fr       */
+/*   Updated: 2019/01/06 18:54:05 by eagulov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ int			get_next_line(const int fd, char **line)
 	static char	*text[OPEN_MAX];
 
 	if (!line || fd < 0 || BUFF_SIZE < 1 || fd > OPEN_MAX)
-		return (1);
+		return (-1);
 	if (!text[fd])
-		text[fd] = ft_strnew(1);
+		text[fd] = "";
 	len = BUFF_SIZE;
 	while (line)
 	{
